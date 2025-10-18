@@ -1,0 +1,53 @@
+/* Importa a fonte 'Inter' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Estilo para o container da tabela, aproveitando o gradiente do materia-card */
+.ranking-container {
+    box-sizing: border-box;
+    width: 1164px;
+    padding: 20px;
+    
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaço entre o cabeçalho e as linhas */
+    
+    /* Aparência */
+    background: linear-gradient(180deg, #006633 0%, #003366 100%);
+    border-radius: 16px;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+}
+
+/* Estilo da linha (tanto para o cabeçalho quanto para os dados dos alunos) */
+.ranking-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 colunas de tamanho igual */
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilo específico para o cabeçalho da tabela */
+.ranking-header {
+    font-weight: 700; /* Bold */
+    font-size: 18px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Linha divisória */
+}
+
+/* Estilo para as linhas de dados dos alunos */
+.ranking-aluno {
+    font-weight: 400; /* Regular */
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória mais sutil */
+}
+
+/* Remove a borda da última linha para um acabamento mais limpo */
+.ranking-aluno:last-child {
+    border-bottom: none;
+}
+
+/* Estilos para as células individuais */
+.ranking-linha span {
+    padding: 5px;
+}

@@ -1,0 +1,42 @@
+/* Importa a fonte 'Inter' do Google Fonts para um visual mais moderno */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Estilo para o container principal (a faixa com gradiente) */
+.cta-banner {
+  box-sizing: border-box;
+  width: 966px;
+  padding: 45px 24px;
+  
+  /* Layout Flexbox para alinhar os itens */
+  display: flex;
+  justify-content: space-between; /* Coloca um item em cada ponta */
+  align-items: center; /* Centraliza verticalmente */
+  
+  /* Aparência */
+  background: linear-gradient(90deg, #006633 0%, #003366 100%);
+  border-radius: 16px;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif; /* Usa a nova fonte */
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Container para a parte do texto */
+.cta-texto {
+  text-align: left;
+}
+
+/* Estilo para o título principal */
+.cta-banner h2 {
+  font-size: 36px;
+  font-weight: 700; /* Bold */
+  margin: 0 0 4px 0; /* Remove margens padrão e adiciona uma pequena embaixo */
+  line-height: 1.2;
+}
+
+/* Estilo para o subtítulo */
+.cta-banner p {
+  font-size: 18px;
+  font-weight: 400; /* Regular */
+  margin: 0;
+  opacity: 0.9;
+}

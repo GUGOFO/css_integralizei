@@ -1,0 +1,67 @@
+/* Importa a fonte 'Inter' do Google Fonts, que estamos usando no projeto */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+/* Estilo do container principal da barra de navegação */
+.navbar-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1400px; /* Largura máxima como na referência */
+  height: 80px; /* <<< ALTURA FIXA ADICIONADA AQUI */
+  padding: 12px 20px;
+  
+  /* Layout Flexbox para alinhar os elementos */
+  display: flex;
+  justify-content: space-between; /* Itens nas extremidades */
+  align-items: center;
+  
+  /* Aparência */
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Container do logo (imagem + texto) */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Espaço entre o ícone e o texto */
+}
+
+.logo-container img {
+  height: 40px; /* Tamanho do logo */
+}
+
+.logo-container span {
+  font-size: 20px;
+  font-weight: 700; /* Bold */
+  color: #000000;
+}
+
+/* Container para os links de navegação */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Espaçamento entre os links */
+}
+
+/* Estilo individual de cada link */
+.nav-links a {
+  text-decoration: none;
+  color: #585858;
+  font-size: 16px;
+  font-weight: 500; /* Medium */
+  transition: color 0.2s ease;
+}
+
+/* Efeito ao passar o mouse sobre o link */
+.nav-links a:hover {
+  color: #000000;
+}
+
+/* O botão "Fale conosco" já pega o estilo do seu arquivo "botao.css" */
+/* Mas podemos ajustar o padding se necessário para este contexto */
+.navbar-container .botao {
+    padding: 12px 24px;
+    font-size: 16px;
+}
+

@@ -1,0 +1,68 @@
+.cartao_de_feature {
+  /* Posicionamento e Dimensões */
+  position: relative;
+  width: 337px;
+  height: 276px;
+  box-sizing: border-box; /* Garante que padding não aumente o tamanho final */
+
+  /* Layout Flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  /* Espaçamento interno */
+  padding: 64px 24px 24px 24px;
+
+  /* Aparência */
+  background: linear-gradient(180deg, #006633 0%, #003366 100%);
+  border-radius: 16px;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes para o ícone (da sua folha icone_azul_com.css) */
+.cartao_de_feature .icone_azul_com {
+  position: absolute;
+  top: -41px;  /* Puxa o ícone para cima */
+  left: 12px;
+  width: 84px;  /* Aumenta o tamanho do ícone */
+  height: 84px;
+}
+
+/* Ajusta o tamanho da máscara (imagem) dentro do ícone maior */
+.cartao_de_feature .icone_azul_com::before {
+    mask-size: 48px 48px;
+}
+
+/*
+Bom essa parte das formatações das palavras teremos que arrumar / deixar generica para o futuro
+Essa é a solução atual, poorem creio que sera facilmente alteravel no futuro
+*/
+
+/* Estilos para os textos */
+.cartao_de_feature h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.cartao_de_feature p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Estilo para o link que parece um botão */
+.cartao_de_feature a {
+  color: #FFFFFF;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.cartao_de_feature a:hover {
+  opacity: 0.8;
+}

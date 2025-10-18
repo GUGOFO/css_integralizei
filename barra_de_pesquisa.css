@@ -1,0 +1,71 @@
+/* Importa a fonte 'Inter' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+/* Container principal da barra de pesquisa */
+.search-container {
+  position: relative;
+  width: 400px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Estilo do campo de texto */
+.search-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  padding: 10px 50px 10px 20px; /* Espaço para o ícone à direita */
+  
+  /* Aparência */
+  border: 2px solid #e0e0e0;
+  border-radius: 25px; /* Bordas arredondadas para formato de pílula */
+  background-color: #f9f9f9;
+  font-size: 16px;
+  color: #333;
+  
+  /* Efeitos */
+  outline: none; /* Remove a borda azul ao focar */
+  transition: all 0.3s ease;
+}
+
+/* Efeito ao focar no campo de texto */
+.search-input:focus {
+  border-color: #0055aa;
+  box-shadow: 0 0 8px rgba(0, 85, 170, 0.2);
+}
+
+/* Placeholder do campo de texto */
+.search-input::placeholder {
+  color: #aaa;
+}
+
+/* Estilo para o botão de pesquisa (que contém o ícone) */
+.search-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50px;
+  
+  /* Aparência e Layout */
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo do ícone SVG */
+.search-button svg {
+  width: 20px;
+  height: 20px;
+  fill: #888;
+  transition: fill 0.2s ease;
+}
+
+/* Efeito no ícone ao passar o mouse sobre o botão */
+.search-button:hover svg {
+  fill: #333;
+}

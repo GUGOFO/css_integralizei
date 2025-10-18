@@ -1,0 +1,41 @@
+/* Importa a fonte 'Inter' que estamos usando no projeto */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+/* Container principal para o card do autor */
+.card-autor-container {
+  box-sizing: border-box;
+  width: 372px;
+  height: 372px;
+  padding: 16px;
+  
+  /* Layout Flexbox para centralizar o conteúdo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 23px; /* Espaço entre a foto e o nome */
+  
+  /* Aparência */
+  background: linear-gradient(180deg, #006633 0%, #003366 100%);
+  border-radius: 16px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Estilo para a foto do autor, baseado no que você já tinha */
+.card-autor-container .autor-foto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Deixa a imagem perfeitamente redonda */
+  object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 1);
+}
+
+/* Estilo para o nome do autor */
+.card-autor-container .nome {
+  font-size: 28px;
+  font-weight: 700; /* Bold */
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0;
+}

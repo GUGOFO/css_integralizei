@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão de Favoritar</title>
+
+    <!-- Importando os novos estilos -->
+    <link rel="stylesheet" href="favoritar.css">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Estrutura do Botão de Favoritar -->
+    <button class="favorite-btn" id="favButton">
+        <!-- Ícone de Estrela em SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <span>Favoritar</span>
+    </button>
+
+    <!-- JavaScript para a interatividade -->
+    <script>
+        // Seleciona o botão e o texto dele
+        const favButton = document.getElementById('favButton');
+        const buttonText = favButton.querySelector('span');
+
+        // Adiciona um "ouvinte" para o evento de clique
+        favButton.addEventListener('click', () => {
+            // A função toggle adiciona a classe se ela não existir, e remove se existir.
+            favButton.classList.toggle('favorited');
+
+            // Verifica se o botão AGORA tem a classe 'favorited'
+            if (favButton.classList.contains('favorited')) {
+                // Se sim, muda o texto para "Favorito!"
+                buttonText.textContent = 'Favorito!';
+            } else {
+                // Se não, volta o texto para "Favoritar"
+                buttonText.textContent = 'Favoritar';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card de Matéria</title>
+
+    <!-- Importando os estilos que já temos */ -->
+    <link rel="stylesheet" href="botao_seta.css">
+    <link rel="stylesheet" href="favoritar.css">
+    
+    <!-- Importando os novos estilos para o card */ -->
+    <link rel="stylesheet" href="card_de_materia.css">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #333;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Estrutura do Card de Matéria -->
+    <div class="materia-card">
+        
+        <!-- Textos à esquerda -->
+        <div class="materia-info">
+            <p class="titulo">FGA0108 - Matemática Discreta 2</p>
+            <p class="subtitulo">Professora Cristiane Loesch De Souza Costa</p>
+        </div>
+
+        <!-- Botões à direita -->
+        <div class="materia-actions">
+            <!-- Reutilizando o botão de seta -->
+            <div class="botao_seta baixo"></div>
+            
+            <!-- Reutilizando o botão de favoritar -->
+            <button class="favorite-btn" id="favButton">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <span>Favoritar</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- JavaScript para a interatividade do botão de favoritar -->
+    <script>
+        const favButton = document.getElementById('favButton');
+        const buttonText = favButton.querySelector('span');
+
+        favButton.addEventListener('click', () => {
+            favButton.classList.toggle('favorited');
+
+            if (favButton.classList.contains('favorited')) {
+                buttonText.textContent = 'Favorito!';
+            } else {
+                buttonText.textContent = 'Favoritar';
+            }
+        });
+    </script>
+
+</body>
+</html>

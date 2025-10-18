@@ -1,0 +1,68 @@
+/* Importa a fonte 'Inter' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+/* Estilo base do botão */
+.favorite-btn {
+  /* Layout e espaçamento */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  
+  /* Aparência */
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px; /* Formato de pílula */
+  cursor: pointer;
+  
+  /* Transições suaves para todas as propriedades */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Estilo do ícone SVG */
+.favorite-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- VARIAÇÃO 1: ESTADO PADRÃO --- */
+.favorite-btn {
+  background-color: #A8A8A8;
+  color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.favorite-btn svg {
+  stroke: #FFFFFF;
+  fill: none;
+}
+
+/* Efeito de hover para o estado padrão */
+.favorite-btn:hover {
+    background-color: #999999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+
+/* --- VARIAÇÃO 2: ESTADO "FAVORITADO" (MAIS BONITO) --- */
+.favorite-btn.favorited {
+  background: linear-gradient(45deg, #FFC371, #FF5F6D);
+  color: #FFFFFF;
+  box-shadow: 0 5px 15px rgba(255, 95, 109, 0.4);
+}
+
+.favorite-btn.favorited svg {
+  stroke: #FFFFFF;
+  fill: #FFFFFF;
+  /* Animação do ícone */
+  transform: scale(1.2) rotate(360deg);
+}
+
+/* Efeito de hover para o estado favoritado */
+.favorite-btn.favorited:hover {
+    box-shadow: 0 8px 20px rgba(255, 95, 109, 0.5);
+}
