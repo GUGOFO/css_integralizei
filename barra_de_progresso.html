@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Progresso</title>
+
+    <!-- Importando os novos estilos -->
+    <link rel="stylesheet" href="barra_de_progresso.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Organiza os exemplos em coluna */
+            justify-content: center;
+            align-items: center;
+            gap: 40px; /* Espaço entre as barras */
+            min-height: 100vh;
+            background-color: #333;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Exemplo 1: Barra com 25% de progresso -->
+    <div class="progress-bar-container" style="--progress-percent: 25%;">
+        <div class="progress-bar-background">
+            <div class="progress-bar-fill"></div>
+        </div>
+        <div class="progress-text">25%</div>
+    </div>
+
+    <!-- Exemplo 2: Barra com 68% de progresso -->
+    <div class="progress-bar-container" style="--progress-percent: 68%;">
+        <div class="progress-bar-background">
+            <div class="progress-bar-fill"></div>
+        </div>
+        <div class="progress-text">68%</div>
+    </div>
+
+    <!-- Exemplo 3: Barra com 100% de progresso -->
+    <div class="progress-bar-container" style="--progress-percent: 100%;">
+        <div class="progress-bar-background">
+            <div class="progress-bar-fill"></div>
+        </div>
+        <div class="progress-text">100%</div>
+    </div>
+
+</body>
+</html>

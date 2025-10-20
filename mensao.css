@@ -1,0 +1,52 @@
+/* Importa a fonte 'Inter' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+/* Estilo base para todos os botões de menção */
+.mencao-btn {
+    /* Layout e espaçamento */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 12px;
+    
+    /* Aparência */
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700; /* Bold */
+    color: #FFFFFF;
+    border: 1.5px solid rgba(255, 255, 255, 0.5); /* Borda sutil */
+    border-radius: 9999px; /* Totalmente arredondado (pílula) */
+    min-width: 40px; /* Largura mínima para botões pequenos como "SR" */
+}
+
+/* --- VARIAÇÕES DE CORES --- */
+
+/* SR - Sem Rendimento (Vermelho) */
+.mencao-btn.sr {
+    background-color: #C22A2A; /* Vermelho escuro */
+}
+
+/* II - Inferior (Laranja) */
+.mencao-btn.ii {
+    background-color: #D86B1E; /* Laranja */
+}
+
+/* MI - Médio Inferior (Amarelo) */
+.mencao-btn.mi {
+    background-color: #D8A81E; /* Amarelo escuro */
+}
+
+/* MM - Médio (Verde claro) */
+.mencao-btn.mm {
+    background-color: #006633; /* Verde do seu design */
+}
+
+/* MS - Médio Superior (Azul claro) */
+.mencao-btn.ms {
+    background-color: #1E88E5; /* Azul claro */
+}
+
+/* SS - Superior (Azul escuro) */
+.mencao-btn.ss {
+    background-color: #003366; /* Azul do seu design */
+}
