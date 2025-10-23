@@ -1,0 +1,92 @@
+/* Importa a fonte 'Inter' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+/* Container principal da conversa */
+#chat-history-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px;
+    
+    flex-grow: 1; /* Faz o container crescer e ocupar o espaço */
+    
+    /* Aparência */
+    background-color: #0F121F; /* Fundo principal */
+    font-family: 'Inter', sans-serif;
+
+    /* Layout e Rolagem */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    overflow-y: auto; /* Habilita a rolagem vertical */
+    
+    /* Efeito de scroll suave */
+    scroll-behavior: smooth;
+    
+    /* REMOVIDO: Esta linha conflitava com a rolagem 'overflow-y: auto' 
+       quando o conteúdo era maior que a tela. O JavaScript já cuida 
+       de rolar para o final. */
+    /* justify-content: flex-end; */
+}
+
+
+/* --- NOVOS ESTILOS PARA A BARRA DE ROLAGEM --- */
+#chat-history-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-history-container::-webkit-scrollbar-track {
+    background: #0F121F; /* Fundo da trilha (mesmo do chat) */
+}
+
+#chat-history-container::-webkit-scrollbar-thumb {
+    background-color: #3A415C; /* Cor da barra (mesma do botão) */
+    border-radius: 4px;
+    border: 2px solid #0F121F; /* Espaçamento em volta da barra */
+}
+
+#chat-history-container::-webkit-scrollbar-thumb:hover {
+    background-color: #4A516E; /* Cor ao passar o mouse */
+}
+/* --- FIM DOS ESTILOS DA BARRA DE ROLAGEM --- */
+
+
+/* Container para cada linha de mensagem (controla o alinhamento) */
+.message-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Bolha de mensagem individual (aparência) */
+.message-bubble {
+    max-width: 75%; /* Mensagem não ocupa a tela inteira */
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+    word-wrap: break-word; /* Quebra palavras longas */
+}
+
+/* --- MENSAGEM DO USUÁRIO (DIREITA) --- */
+.user-message {
+    justify-content: flex-end; /* Alinha na direita */
+}
+
+.user-message .message-bubble {
+    background-color: #3A415C; /* Cor azul (do botão de enviar) */
+    color: #FFFFFF;
+    border-bottom-right-radius: 5px; /* Detalhe de "cauda" */
+}
+
+/* --- MENSAGEM DA IA (ESQUERDA) --- */
+.ai-message {
+    justify-content: flex-start; /* Alinha na esquerda */
+}
+
+.ai-message .message-bubble {
+    background-color: #1A1F36; /* Cor de fundo da caixa de chat */
+    border: 1px solid #3A415C;
+    color: #E0E0E0;
+    border-bottom-left-radius: 5px; /* Detalhe de "cauda" */
+}
+

@@ -1,0 +1,75 @@
+/* Importa a fonte 'Inter' com os pesos necessários */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap');
+
+/* --- ESTILO DO TÍTULO ATUALIZADO --- */
+.chat-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 500; /* Peso médio para "What Can" */
+    margin-bottom: 24px;
+    text-align: center;
+    
+    /* Gradiente mais escuro para a primeira parte */
+    background: linear-gradient(180deg, #A0A0A0 0%, #686868 100%);
+    -webkit-background-clip: text; /* Necessário para compatibilidade */
+    background-clip: text;
+    color: transparent; /* Deixa o gradiente aparecer */
+}
+
+.chat-title .title-bold {
+    font-weight: 600; /* Peso mais forte */
+    
+    /* Gradiente mais claro para a parte em negrito */
+    background: linear-gradient(180deg, #EAEAEA 0%, #B0B0B0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+/* --- FIM DO ESTILO DO TÍTULO --- */
+
+
+/* Container para as bolhas de prompt */
+.prompt-bubbles-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Permite que as bolhas quebrem a linha em telas menores */
+}
+
+/* Estilo individual da bolha */
+.prompt-bubble {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    
+    /* Aparência */
+    background-color: #1A1F36; /* Mesmo fundo da barra de chat */
+    border: 1px solid #3A415C;
+    border-radius: 20px; /* Bordas bem arredondadas (formato pílula) */
+    color: #E0E0E0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.prompt-bubble:hover {
+    background-color: #2A314E; /* Um pouco mais claro no hover */
+    border-color: #4A516E;
+}
+
+/* Estilo para os ícones SVG dentro das bolhas */
+.prompt-bubble svg {
+    width: 18px;
+    height: 18px;
+    stroke: #AAB0CC; /* Cor do ícone */
+    stroke-width: 2;
+}

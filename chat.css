@@ -1,0 +1,81 @@
+/* Importa a fonte 'Inter' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Container principal da barra de chat */
+.chat-input-container-v2 {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px;
+    padding: 12px;
+    
+    /* Aparência */
+    background-color: #1A1F36; /* Fundo azul escuro */
+    border: 1px solid #3A415C;
+    border-radius: 16px; /* Bordas arredondadas */
+    
+    /* Layout */
+    display: flex;
+    align-items: center; /* Alinha verticalmente o texto e o botão */
+    gap: 12px;
+    
+    font-family: 'Inter', sans-serif;
+}
+
+/* Área de texto para o prompt */
+.chat-textarea-v2 {
+    flex-grow: 1; /* Faz o textarea ocupar todo o espaço disponível */
+    min-height: 40px; /* Altura mínima */
+    max-height: 200px; /* Altura máxima antes de rolar */
+    
+    /* Aparência */
+    background: none;
+    border: none;
+    outline: none;
+    resize: none; /* Impede o usuário de redimensionar */
+    
+    color: #E0E0E0; /* Cor do texto */
+    font-size: 16px;
+    
+    /* Estilo do placeholder */
+    --placeholder-color: #7A819D;
+}
+
+.chat-textarea-v2::placeholder {
+    color: var(--placeholder-color);
+}
+
+/* Remove estilos padrão de foco */
+.chat-textarea-v2:focus {
+    border: none;
+    outline: none;
+}
+
+/* Botão de enviar */
+.chat-send-btn-v2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Impede o botão de encolher */
+    
+    width: 44px;
+    height: 44px;
+    
+    /* Aparência baseada na imagem */
+    background-color: #3A415C; 
+    border: none;
+    border-radius: 10px; /* Canto levemente arredondado */
+    cursor: pointer;
+    
+    transition: background-color 0.2s ease;
+}
+
+.chat-send-btn-v2 svg {
+    width: 20px;
+    height: 20px;
+    stroke: #FFFFFF;
+    stroke-width: 2.5;
+}
+
+.chat-send-btn-v2:hover {
+    background-color: #4A516E;
+}
