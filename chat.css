@@ -8,10 +8,11 @@
     max-width: 800px;
     padding: 12px;
     
-    /* Aparência */
-    background-color: #1A1F36; /* Fundo azul escuro */
-    border: 1px solid #3A415C;
+    /* Aparência ATUALIZADA (Gradiente) */
+    background: linear-gradient(90deg, #006633 0%, #003366 100%);
+    border: none; /* Borda removida */
     border-radius: 16px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
     
     /* Layout */
     display: flex;
@@ -33,11 +34,11 @@
     outline: none;
     resize: none; /* Impede o usuário de redimensionar */
     
-    color: #E0E0E0; /* Cor do texto */
+    color: #FFFFFF; /* Cor do texto ATUALIZADA (branca) */
     font-size: 16px;
     
-    /* Estilo do placeholder */
-    --placeholder-color: #7A819D;
+    /* Estilo do placeholder ATUALIZADO (claro) */
+    --placeholder-color: rgba(255, 255, 255, 0.7);
 }
 
 .chat-textarea-v2::placeholder {
@@ -60,11 +61,12 @@
     width: 44px;
     height: 44px;
     
-    /* Aparência baseada na imagem */
-    background-color: #3A415C; 
+    /* Aparência ATUALIZADA (Branco) */
+    background: #FFFFFF; 
     border: none;
     border-radius: 10px; /* Canto levemente arredondado */
     cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     
     transition: background-color 0.2s ease;
 }
@@ -72,10 +74,12 @@
 .chat-send-btn-v2 svg {
     width: 20px;
     height: 20px;
-    stroke: #FFFFFF;
+    /* ATUALIZADO: Seta com gradiente (definido no HTML) */
+    stroke: url(#svg-gradient);
     stroke-width: 2.5;
 }
 
 .chat-send-btn-v2:hover {
-    background-color: #4A516E;
+    background-color: #F3F4F6; /* ATUALIZADO (cinza claro no hover) */
 }
+

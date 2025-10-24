@@ -1,29 +1,23 @@
 /* Importa a fonte 'Inter' com os pesos necessários */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap');
 
-/* --- ESTILO DO TÍTULO ATUALIZADO --- */
+/* --- ESTILO DO TÍTULO ATUALIZADO (Modo Claro) --- */
 .chat-title {
     font-family: 'Inter', sans-serif;
     font-size: 28px;
-    font-weight: 500; /* Peso médio para "What Can" */
+    font-weight: 500; /* Peso médio */
     margin-bottom: 24px;
     text-align: center;
     
-    /* Gradiente mais escuro para a primeira parte */
-    background: linear-gradient(180deg, #A0A0A0 0%, #686868 100%);
-    -webkit-background-clip: text; /* Necessário para compatibilidade */
-    background-clip: text;
-    color: transparent; /* Deixa o gradiente aparecer */
+    /* ATUALIZADO: Cor de texto escura */
+    color: #4B5563; /* Cinza (Tailwind gray-600) */
 }
 
 .chat-title .title-bold {
     font-weight: 600; /* Peso mais forte */
     
-    /* Gradiente mais claro para a parte em negrito */
-    background: linear-gradient(180deg, #EAEAEA 0%, #B0B0B0 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    /* ATUALIZADO: Cor de texto mais escura */
+    color: #1F2937; /* Cinza escuro (Tailwind gray-800) */
 }
 /* --- FIM DO ESTILO DO TÍTULO --- */
 
@@ -48,11 +42,11 @@
     gap: 8px;
     padding: 10px 16px;
     
-    /* Aparência */
-    background-color: #1A1F36; /* Mesmo fundo da barra de chat */
-    border: 1px solid #3A415C;
+    /* Aparência ATUALIZADA (Gradiente) */
+    background: linear-gradient(90deg, #006633 0%, #003366 100%);
+    border: none;
     border-radius: 20px; /* Bordas bem arredondadas (formato pílula) */
-    color: #E0E0E0;
+    color: #FFFFFF; /* Cor do texto (branca) */
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -62,14 +56,14 @@
 }
 
 .prompt-bubble:hover {
-    background-color: #2A314E; /* Um pouco mais claro no hover */
-    border-color: #4A516E;
+    opacity: 0.9; /* ATUALIZADO (leve transparência no hover) */
 }
 
 /* Estilo para os ícones SVG dentro das bolhas */
 .prompt-bubble svg {
     width: 18px;
     height: 18px;
-    stroke: #AAB0CC; /* Cor do ícone */
+    stroke: #FFFFFF; /* Cor do ícone ATUALIZADA (branca) */
     stroke-width: 2;
 }
+

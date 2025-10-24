@@ -10,7 +10,7 @@
     flex-grow: 1; /* Faz o container crescer e ocupar o espaço */
     
     /* Aparência */
-    background-color: #0F121F; /* Fundo principal */
+    background-color: transparent; /* Fundo transparente */
     font-family: 'Inter', sans-serif;
 
     /* Layout e Rolagem */
@@ -22,31 +22,26 @@
     
     /* Efeito de scroll suave */
     scroll-behavior: smooth;
-    
-    /* REMOVIDO: Esta linha conflitava com a rolagem 'overflow-y: auto' 
-       quando o conteúdo era maior que a tela. O JavaScript já cuida 
-       de rolar para o final. */
-    /* justify-content: flex-end; */
 }
 
 
-/* --- NOVOS ESTILOS PARA A BARRA DE ROLAGEM --- */
+/* --- ESTILOS DA BARRA DE ROLAGEM ATUALIZADOS (Modo Cinza) --- */
 #chat-history-container::-webkit-scrollbar {
     width: 8px;
 }
 
 #chat-history-container::-webkit-scrollbar-track {
-    background: #0F121F; /* Fundo da trilha (mesmo do chat) */
+    background: transparent; /* Fundo da trilha transparente */
 }
 
 #chat-history-container::-webkit-scrollbar-thumb {
-    background-color: #3A415C; /* Cor da barra (mesma do botão) */
+    background-color: #9CA3AF; /* Cor da barra (cinza médio) */
     border-radius: 4px;
-    border: 2px solid #0F121F; /* Espaçamento em volta da barra */
+    border: 2px solid transparent; 
 }
 
 #chat-history-container::-webkit-scrollbar-thumb:hover {
-    background-color: #4A516E; /* Cor ao passar o mouse */
+    background-color: #6B7280; /* Cor ao passar o mouse (cinza mais escuro) */
 }
 /* --- FIM DOS ESTILOS DA BARRA DE ROLAGEM --- */
 
@@ -73,7 +68,8 @@
 }
 
 .user-message .message-bubble {
-    background-color: #3A415C; /* Cor azul (do botão de enviar) */
+    /* Fundo com gradiente (conforme solicitado) */
+    background: linear-gradient(90deg, #006633 0%, #003366 100%);
     color: #FFFFFF;
     border-bottom-right-radius: 5px; /* Detalhe de "cauda" */
 }
@@ -84,8 +80,10 @@
 }
 
 .ai-message .message-bubble {
-    background-color: #1A1F36; /* Cor de fundo da caixa de chat */
-    border: 1px solid #3A415C;
-    color: #E0E0E0;
+    /* ATUALIZADO: Fundo com gradiente (conforme solicitado) */
+    background: linear-gradient(90deg, #006633 0%, #003366 100%);
+    border: none; /* Borda removida */
+    color: #FFFFFF; /* Texto branco */
     border-bottom-left-radius: 5px; /* Detalhe de "cauda" */
 }
+
