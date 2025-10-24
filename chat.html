@@ -14,7 +14,7 @@
     <!-- Importando os estilos da conversa -->
     <link rel="stylesheet" href="chat_conversa.css">
 
-    <!-- NOVO: Bibliotecas para renderizar Markdown e Equações (KaTeX) -->
+    <!-- Bibliotecas para renderizar Markdown e Equações (KaTeX) -->
     <!-- 1. KaTeX (para equações) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" xintegrity="sha384-wcIxkf4k55goMdWexsm28BNrLzVTANlG8DHYPxdIqLqeG0TjGg52boLl-feedback-v93" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" xintegrity="sha384-hIoBPJpTUs74ddcyHhPwO0seG0zTXRTO+pgiA4FLSrmnPKv5E+kbRGvcfIfG5jCM" crossorigin="anonymous"></script>
@@ -48,12 +48,9 @@
 </head>
 <body>
 
-    <!-- Container da Conversa -->
     <div id="chat-history-container">
-        <!-- A conversa começa aqui -->
     </div>
 
-    <!-- Wrapper para toda a área de input fixa -->
     <div class="chat-input-area">
 
         <!-- TÍTULO -->
@@ -71,7 +68,7 @@
             </button>
         </div>
 
-        <!-- Container para as Bolhas de Prompt (ATUALIZADO) -->
+        <!-- Container para as Bolhas de Prompt -->
         <div class="prompt-bubbles-container">
             <!-- Bolha 1: Calcular Integralização -->
             <button class="prompt-bubble" data-prompt="Como eu calculo minha integralização?">
@@ -99,19 +96,15 @@
 
     <!-- SCRIPT ATUALIZADO COM API GEMINI -->
     <script>
-        // --- Seletores de Elementos ---
         const chatTextarea = document.getElementById('chatTextarea');
         const promptBubbles = document.querySelectorAll('.prompt-bubble');
         const sendButton = document.getElementById('sendButton');
         const chatHistoryContainer = document.getElementById('chat-history-container');
 
         // --- IMPORTANTE: CONFIGURAÇÃO DA API KEY ---
-        // A linha abaixo estava causando o "Erro de conexão".
-        // Cole sua chave da API do Google AI Studio aqui.
         const apiKey = "AIzaSyB-R6kHRGMaK_B_gVyFl21Lv-UEAnJv38E"; // <-- IMPORTANTE: Insira sua chave da API aqui
 
-        // --- CONTEXTO DA IA (SYSTEM PROMPT) ATUALIZADO ---
-        // Contexto atualizado com base nas informações do projeto "Integralizei UNB"
+        // Contexto que a IA recebe antes de iniciar
         const systemPrompt = `
 Você é o assistente virtual pessoal do projeto "Integralizei UNB" (SEU NOME É UnBot).
 Sua missão é ajudar os alunos da Universidade de Brasília (UnB) a entender seu progresso acadêmico e a tomar decisões de matrícula com mais confiança.
@@ -156,7 +149,7 @@ Você deve usar as seguintes definições oficiais da UnB para responder às per
 
 Responda a todas as perguntas em Português do Brasil, de forma prestativa e formal, usando esse contexto.
 
-Caso seja perguntado quanto a pergunta (Qual o homem mais bonito do mundo?), somente se tiver essa exata sintaxe, responda EXATAMENTE: O Gustavo Gomes Fornaciari é o ser mais lindo do mundo
+Caso seja perguntado EXATAMENTE COM AS PALAVRAS (Qual o homem mais bonito do mundo?), somente se tiver essa exata sintaxe, responda EXATAMENTE: O Gustavo Gomes Fornaciari é o ser mais lindo do mundo
 `;
 
         // --- Histórico para a API ---
@@ -174,12 +167,6 @@ Caso seja perguntado quanto a pergunta (Qual o homem mais bonito do mundo?), som
 
         // --- Funções do Chat ---
 
-        /**
-         * Cria e exibe uma nova bolha de mensagem na tela.
-         * @param {string} text - O texto da mensagem.
-         * @param {string} senderClass - 'user' ou 'ai'.
-         * @returns {HTMLElement} O elemento da bolha (para atualização futura, ex: "digitando...").
-         */
         function createMessageElement(text, senderClass) {
             const msgContainer = document.createElement('div');
             msgContainer.className = `message-container ${senderClass}-message`;
@@ -187,15 +174,11 @@ Caso seja perguntado quanto a pergunta (Qual o homem mais bonito do mundo?), som
             const msgBubble = document.createElement('div');
             msgBubble.className = 'message-bubble';
             
-            // --- ATUALIZAÇÃO ---
-            // 1. Converte Markdown para HTML (ex: **oi** -> <strong>oi</strong>)
-            // Usamos 'marked.parse' e 'innerHTML' em vez de 'textContent'
             msgBubble.innerHTML = marked.parse(text); 
             
             msgContainer.appendChild(msgBubble);
             chatHistoryContainer.appendChild(msgContainer);
 
-            // 2. Renderiza equações de matemática (LaTeX) no novo elemento
             // Esta função vem da biblioteca KaTeX (auto-render.js)
             try {
                 if (window.renderMathInElement) {
@@ -209,31 +192,24 @@ Caso seja perguntado quanto a pergunta (Qual o homem mais bonito do mundo?), som
             } catch (error) {
                 console.error("Erro ao renderizar KaTeX:", error);
             }
-            // --- FIM DA ATUALIZAÇÃO ---
-            
+
             // Rola para a nova mensagem
             chatHistoryContainer.scrollTop = chatHistoryContainer.scrollHeight;
             return msgBubble; // Retorna a bolha para ser atualizada
         }
 
-        /**
-         * Habilita ou desabilita a área de input.
-         * @param {boolean} disabled - True para desabilitar, false para habilitar.
-         */
         function setInputDisabled(disabled) {
             chatTextarea.disabled = disabled;
             sendButton.disabled = disabled;
             chatTextarea.placeholder = disabled ? "Aguarde a resposta..." : "Ask anything you want...";
         }
 
-        /**
-         * Função principal para enviar a mensagem do usuário.
-         */
+        // Função principal para enviar a mensagem do usuário.
         function sendMessage() {
             const text = chatTextarea.value.trim(); 
             if (text === '') return; 
 
-            // NOVO: Verificar se a API key foi inserida
+            // Verificar se a API key foi inserida
             if (apiKey === "COLOQUE_SUA_CHAVE_DA_API_AQUI" || apiKey === "") {
                 createMessageElement("Erro: Chave da API não configurada. Por favor, edite o arquivo chat.html e insira sua chave na variável 'apiKey'.", 'ai');
                 return; // Para a execução
@@ -262,27 +238,16 @@ Caso seja perguntado quanto a pergunta (Qual o homem mais bonito do mundo?), som
             callGeminiAPI(aiLoadingBubble);
         }
 
-        /**
-         * Chama a API do Gemini com o histórico e atualiza a bolha de resposta.
-         * @param {HTMLElement} aiBubble - A bolha de "digitando..." para ser atualizada.
-         */
         async function callGeminiAPI(aiBubble) {
             // A variável apiKey agora é lida do topo do script
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
             const payload = {
                 contents: chatHistoryForAPI,
-                // NOVO: Adiciona o contexto da IA (system prompt) ao payload
+                //Adiciona o contexto da IA (system prompt) ao payload
                 systemInstruction: {
                     parts: [{ text: systemPrompt }]
                 },
-                // Opcional: Configurações de segurança
-                // safetySettings: [
-                //     { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
-                //     { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
-                //     { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
-                //     { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
-                // ],
             };
 
             let retries = 0;
@@ -311,7 +276,6 @@ Caso seja perguntado quanto a pergunta (Qual o homem mais bonito do mundo?), som
                         
                         const aiText = result.candidates[0].content.parts[0].text;
 
-                        // --- ATUALIZAÇÃO ---
                         // 1. Atualiza a bolha com o HTML renderizado do Markdown
                         aiBubble.innerHTML = marked.parse(aiText);
 
@@ -328,7 +292,6 @@ Caso seja perguntado quanto a pergunta (Qual o homem mais bonito do mundo?), som
                         } catch (error) {
                              console.error("Erro ao renderizar KaTeX na resposta:", error);
                         }
-                        // --- FIM DA ATUALIZAÇÃO ---
                         
                         // 3. Adiciona a resposta da IA (texto puro) ao histórico da API
                         chatHistoryForAPI.push({ role: "model", parts: [{ text: aiText }] });
@@ -386,12 +349,7 @@ Caso seja perguntado quanto a pergunta (Qual o homem mais bonito do mundo?), som
         }
         chatTextarea.addEventListener('input', autoResizeTextarea);
 
-        // --- Adicionado para garantir que o renderMathInElement esteja disponível ---
-        // Atrasar a primeira renderização de KaTeX até que o script seja carregado
         document.addEventListener("DOMContentLoaded", () => {
-            // Tenta renderizar qualquer matemática que já possa estar na página
-            // (como a mensagem inicial "Olá! Como posso te ajudar hoje?")
-            // Se você adicionar uma mensagem inicial estática, ela será renderizada aqui.
         });
     </script>
 
