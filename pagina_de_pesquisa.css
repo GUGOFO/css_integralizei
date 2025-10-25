@@ -1,0 +1,120 @@
+/* Importa a fonte 'Inter' para consistência */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Container principal da página */
+.pagina-pesquisa-container {
+    /* Define a largura máxima baseada nos seus componentes */
+    max-width: 1164px; 
+    /* Centraliza o conteúdo na página */
+    margin: 0 auto; 
+    padding: 0 20px; /* Adiciona um respiro nas laterais */
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Cabeçalho com a Barra de Pesquisa --- */
+.pesquisa-header {
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif;
+    text-align: center
+}
+
+.pesquisa-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #003366; /* Azul escuro do seu gradiente */
+    margin: 0 0 4px 0;
+    text-align: center
+}
+
+.pesquisa-header p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    margin: 0 0 20px 0;
+}
+
+/* Ajuste no container da barra de pesquisa */
+.pesquisa-header .search-container {
+    width: 100%; /* Faz a barra de pesquisa ocupar todo o espaço */
+    max-width: 600px; /* Mas limita a largura máxima */
+    margin: 0 auto;
+}
+
+/* Ajuste no input da barra de pesquisa */
+.pesquisa-header .search-input {
+    height: 50px;
+    background-color: #FFFFFF; /* Fundo branco */
+    border: 1px solid #e0e0e0;
+    border-radius: 12px; /* Menos arredondado */
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    
+}
+.pesquisa-header .search-input:focus {
+    border-color: #006633; /* Verde do seu gradiente */
+    box-shadow: 0 0 8px rgba(0, 102, 51, 0.2);
+    
+    
+}
+
+/* --- Lista de Disciplinas --- */
+.lista-disciplinas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre cada card de matéria */
+}
+
+/* Container de cada item (card + detalhes) */
+.disciplina-item-container {
+    width: 100%;
+}
+
+/* --- Sobrescrita dos seus estilos --- */
+
+/* 1. Ajuste no Card da Matéria */
+.materia-card {
+    width: 100%; /* Faz o card ocupar 100% do container */
+}
+
+/* 2. Ajuste no Ranking */
+.ranking-container {
+    width: 100%; /* Faz o ranking ocupar 100% do container */
+    margin-top: 20px; 
+}
+
+/* 3. Container para os Feature Cards */
+.feature-cards-container {
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+    gap: 20px;
+    padding-top: 60px; /* Espaço para o ícone flutuante */
+    padding-bottom: 20px;
+}
+
+/* --- Animação de Colapso (Mostrar / Esconder) --- */
+.disciplina-detalhes {
+    display: grid;
+    grid-template-rows: 0fr; /* Começa com altura 0 */
+    overflow: hidden;
+    transition: grid-template-rows 0.4s ease-in-out;
+}
+
+.disciplina-detalhes > div {
+    min-height: 0;
+}
+
+.disciplina-detalhes.show {
+    grid-template-rows: 1fr; /* Expande para altura total */
+}
+
+/* Animação para o botão de seta */
+.botao_seta.toggle-button {
+    transition: transform 0.4s ease;
+}
+
+.botao_seta.toggle-button.girar {
+    transform: rotate(180deg); /* Gira para cima */
+}

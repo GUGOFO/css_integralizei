@@ -4,7 +4,6 @@
 /* Estilo para o container da tabela, aproveitando o gradiente do materia-card */
 .ranking-container {
     box-sizing: border-box;
-    width: 1164px;
     padding: 20px;
     
     /* Layout */

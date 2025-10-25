@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Navbar Fixa</title>
+    
+    <!-- 1. Importando o CSS dos botões que você já tem -->
+    <link rel="stylesheet" href="botao.css">
+    
+    <!-- 2. Importando o novo CSS da navbar -->
+    <link rel="stylesheet" href="barra_de_navegacao.css">
+
+    <style>
+        /* Importa a fonte Inter para a página de exemplo */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            /* Remove margens padrão */
+            margin: 0; 
+            
+            /* !!! IMPORTANTE !!! */
+            /* Adiciona um padding no topo igual à altura da navbar */
+            /* A navbar tem 72px (16px + 40px + 16px). Adicionamos um pouco mais para respirar. */
+            padding-top: 80px; 
+            
+            /* Apenas para o exemplo */
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f5;
+        }
+
+        /* Conteúdo de exemplo para demonstrar a rolagem */
+        .content {
+            padding: 20px 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .content p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+      =================================================
+      COMEÇO DA NAVBAR 
+      Copie este bloco para todas as suas páginas
+      =================================================
+    -->
+    <header class="navbar-container">
+        
+        <!-- Logo e Título -->
+        <a href="index.html" class="navbar-logo"> <!-- Link para a página inicial -->
+            <!-- Use a logo que você enviou -->
+            <img src="UnB_Foto.png" alt="Logo Integralizei UnB">
+            <span>Integralizei UnB</span>
+        </a>
+    
+        <!-- Links de Navegação -->
+        <nav class="navbar-links">
+            <!-- Usamos as classes .botao e .cor_da_UnB do seu CSS -->
+            <a href="unbot.html" class="botao cor_da_UnB">Unbot</a>
+            <a href="dados.html" class="botao cor_da_UnB">DADOS</a>
+            <a href="calculadora.html" class="botao cor_da_UnB">CALCULADORA</a>
+            <a href="pesquisa.html" class="botao cor_da_UnB">PESQUISA</a>
+        </nav>
+
+    </header>
+    <!-- 
+      =================================================
+      FIM DA NAVBAR 
+      =================================================
+    -->
+
+
+    <!-- Conteúdo de exemplo da página -->
+    <main class="content">
+        <h1>Página de Exemplo</h1>
+        <p>O conteúdo da sua página começa aqui, abaixo da navbar fixa. Você pode rolar a página e a barra de navegação continuará no topo.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </main>
+
+</body>
+</html>

@@ -4,7 +4,6 @@
 /* Container principal do card de matéria */
 .materia-card {
   box-sizing: border-box;
-  width: 1164px;
   padding: 15px;
   
   /* Layout Flexbox para alinhar os itens */
